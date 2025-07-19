@@ -1,15 +1,7 @@
 import conf from "@/conf/conf";
+import { AuthCredentials, RegisterData } from "@/types/reduxTypes";
 import { Client, Account, ID } from "appwrite";
 
-
-interface AuthCredentials {
-    email: string;
-    password: string;
-}
-
-interface RegisterData extends AuthCredentials {
-    name: string;
-}
 
 export class AuthService {
     client  = new Client();

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { cn } from "@/lib/utils";
-
-import StoreProvider from "./(main)/StoreProvider";
+import StoreProvider from "../(main)/StoreProvider";
 
 
 const geistSans = Geist({
@@ -35,7 +34,6 @@ export default function RootLayout({
         className={cn(`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans grainy antialiased`)}
       >
         <StoreProvider>
-
           {children}
         </StoreProvider>
 
