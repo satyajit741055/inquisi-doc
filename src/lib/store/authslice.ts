@@ -89,7 +89,7 @@ export const authSlice = createSlice({
             state.error = null
         },
         resetAuth : (state)=>{
-                        state.user = null
+                        state.user = null 
             state.isAuthenticated = false
             state.loading = false
             state.error = null

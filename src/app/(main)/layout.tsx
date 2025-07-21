@@ -3,8 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
-import StoreProvider from "./StoreProvider";
 
+import 'react-loading-skeleton/dist/skeleton.css'
+import 'simplebar-react/dist/simplebar.min.css'
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,12 +34,8 @@ export default function RootLayout({
       <body
         className={cn(`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans grainy antialiased`)}
       >
-        <StoreProvider>
-
           <Navbar />
           {children}
-        </StoreProvider>
-
       </body>
     </html>
   );

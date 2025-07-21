@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 
 import StoreProvider from "./(main)/StoreProvider";
+import Providers from "@/components/Providers";
+import { Toaster } from "@/components/ui/sonner";
 
 
 const geistSans = Geist({
@@ -31,15 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="ligth">
-      <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans grainy antialiased`)}
-      >
-        <StoreProvider>
+      <Providers>
+        <body
+          className={cn(`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans grainy antialiased`)}
+        >
+          <StoreProvider>
 
-          {children}
-        </StoreProvider>
+            {children}
+            <Toaster />
+          </StoreProvider>
 
-      </body>
+        </body>
+      </Providers>
     </html>
   );
 }
